@@ -91,7 +91,8 @@ html , body{
         z-index: 1;
         position: absolute;
         display: flex;
-        padding-right: 118px ; 
+        // padding-right: 118px ; 
+        padding-right: 35px ; 
         .caption{
             margin-bottom: 0px;
             padding-right: 55px;
@@ -122,11 +123,11 @@ html , body{
                 position: absolute;
                 height: 950px;
                 width: 52%;
-                transform: matrix(3, 0 , 0 ,  1 , 100 , -270) ;
-                -moz-transform: matrix(3, 0 , 0 ,  1 , 100 , -270) ;
-                -ms-transform: matrix(3, 0 , 0 ,  1 , 100 , -270) ;
-                -o-transform: matrix(3, 0 , 0 ,  1 , 100 , -270) ;
-                -webkit-transform: matrix(3, 0 , 0 ,  1 , 100 , -270) ;
+                transform: matrix(3, 0 , 0 ,  1 , 50 , -270) ;
+                -moz-transform: matrix(3, 0 , 0 ,  1 , 50 , -270) ;
+                -ms-transform: matrix(3, 0 , 0 ,  1 , 50 , -270) ;
+                -o-transform: matrix(3, 0 , 0 ,  1 , 50 , -270) ;
+                -webkit-transform: matrix(3, 0 , 0 ,  1 , 50 , -270) ;
             }
         }
     }
@@ -278,97 +279,61 @@ html , body{
     }
 }
 .screen-app{
-    background-color: $bg-app;
-    padding-top: 100px;
     position: relative;
-    .slider{
-        padding-inline: 20px;
-        position: relative;
-        .carousel-inner{
-            position: relative;
-            padding: 50px 0 190px;
-            .cover{
-                position: absolute;
-                width: 728px;
-                height: 660px;
-                right: 429px;
-                top: -10px;
-                img{
-                    width: 100%;
-                    height: 100%;
-                }
-            }
-        }
-        .carousel-item{
-            background-color: transparent !important;
-            .active{
-                background-color: transparent !important;
-            }
-        }
-        #wrapper{
-            width:100% !important;
-            height:100%;
-            transition:transform 0.5s ease-in-out; 
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            .slider-img{
-                width: 190px;
-                height: 375px;
-                z-index: 2;
-                img{
-                    width: 100%;
-                    height: 100%;
-                }
-            }
-            .slider-img + .slider-img{
-                margin-right: 70px;
-            }
-        }
-        .indecators{
-            display: flex;
-            margin-top: 250px;
-            z-index: 12;
-            justify-content: center;
-            li{
-                width: 30px;
-                border: none;
+    padding: 100px 0px 150px 0px;
+    background: #FFFFFF;
+    .screen-img{
+        position: absolute;
+        left: 50%;
+        bottom: 230px;
+        width: 300px;
+        height: 563px;
+        z-index: 111;
+        transform: translateX(-50%);
+    }
+    .screen-slider{
+        margin-top: 55px;
+        direction: ltr;
+        .owl-dots{
+            text-align: center;
+            margin-top: 80px;
+            .owl-dot{
+                height: 9px;
+                width: 25px;
+                background: #b0c9dd;
                 border-radius: 15px;
-                -webkit-border-radius: 15px;
-                -moz-border-radius: 15px;
-                -ms-border-radius: 15px;
-                cursor: pointer;
-                -o-border-radius: 15px;
-                height: 8px;
-                background-color: $light-bg ;
+                display: inline-block;
+                margin: 0px 2px;
+                -webkit-transition: all 0.5s ease 0s;
+                -o-transition: all 0.5s ease 0s;
+                transition: all 0.5s ease 0s;
             }
-            .main{
-                width: 60px;
-            }
-            li + li{
-                margin-right: 10px;
+            .active{
+                background: #71acc3; width: 50px;
             }
         }
-    }    
-    .app{
-        padding: 50px 100px;
-        margin-top: 400px;
-        background: $white;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        .title{
-            color: $min-color;
-            font-size: 18pt;
-            font-weight: bold;
-        }
-        @extend %buttons ; 
-        .buttons{
-            .android{
-                margin-right: 30px;
-            }
+        .owl-dots.disabled{
+            display: inherit !important;
         }
     }
+    .owl-carousel{
+        .owl-item{
+            background-color: transparent !important;
+            img{
+                transform: scale(0.96);
+                -webkit-transition: all 0.3s ease 0s;
+                -o-transition: all 0.3s ease 0s;
+                transition: all 0.3s ease 0s;
+                box-shadow: 0px 5px 6px #EBEBEB;
+                border-radius: 20px;
+            }
+        } 
+        .center{
+            img{
+                transform: scale(1);
+            }
+        }
+    } 
 }
 .footer{
     background-color: $black-color;
@@ -462,7 +427,7 @@ html[dir = "ltr"]{
         }
         .overlay{
             padding-right: 0 ; 
-            padding-left: 118px;
+            padding-left: 35px;
             .caption{
                 padding-left: 55px;
                 padding-right: 0;
@@ -475,10 +440,6 @@ html[dir = "ltr"]{
                         margin-right: 0;
                         margin-left: 30px;
                     }
-                }
-            }
-            .mob{
-                img{
                 }
             }
         }
@@ -518,37 +479,6 @@ html[dir = "ltr"]{
             }
         }
     }
-    .screen-app{
-        .slider{
-            .carousel-inner{
-                .cover{
-                    left: 322px;
-                    right: initial;
-                }
-            }
-            #wrapper{
-                .slider-img + .slider-img{
-                    // margin-right: 70px;
-                    margin-left: 70px;
-                    margin-right: 0;
-                }
-            }
-            .indecators{
-                li + li{
-                    margin-right: 0;
-                    margin-left: 10px;
-                }
-            }
-        }    
-        .app{
-            .buttons{
-                .android{
-                    margin-right: 0;
-                    margin-left: 30px;
-                }
-            }
-        }
-    }
     .footer{
         .items{
             .item{
@@ -581,7 +511,6 @@ html[dir = "ltr"]{
             }
         }
         .overlay{
-            padding-right: 110px;
             .caption{
                 .title{
                     h3{
@@ -608,12 +537,10 @@ html[dir = "ltr"]{
         height: 500px;
     }
     .screen-app{
-        .slider{
-            .carousel-inner{
-                .cover{
-                    right: 368px;
-                }
-            }
+        .screen-img{
+            bottom: 235px;
+            width: 252px;
+            height: 477px;
         }
     }
 }
@@ -647,27 +574,6 @@ html[dir = "ltr"]{
     .about-us >.title , .features > .title , .sections > .title , .screen-app > .title{
         &::before  , &::after{
             width: 30%;
-        }
-    }
-    // .sections{
-    //     .show-case{
-    //         padding-inline: 0;
-    //         .products{
-    //             .product{
-    //                 .card{
-    //                     width: 250px;
-    //                 }
-    //             }
-    //         }
-    //     }
-    // }
-    .screen-app{
-        .slider{
-            .carousel-inner{
-                .cover{
-                    right: 309px;
-                }
-            }
         }
     }
 }
@@ -713,35 +619,11 @@ html[dir = "ltr"]{
             padding: 65px 0 0 0;
         }
     }
-    // .sections{
-    //     .title{
-    //         &::before , &::after{
-    //             width: 33%;
-    //         }
-    //     }
-    // }
     .screen-app{
-        .title{
-            &::before , &::after{
-                width: 30%;
-            }
-        }
-        .carousel-inner{
-            #wrapper{
-                .slider-img{
-                    width: 150px;
-                    height: 300px;
-                }
-                .slider-img + .slider-img{
-                    margin-right: 60px;
-                }
-            }
-            .cover{
-                right: 338px !important;
-                width: 565px !important;
-                top: 1px !important;
-                height: 531px !important;
-            }
+        .screen-img{
+            bottom: 240px;
+            width: 208px;
+            height: 392px;
         }
     }
 }
@@ -797,27 +679,6 @@ html[dir = "ltr"]{
             }
             .title{
                 margin-bottom: 50px;
-            }
-        }
-    }
-    // .sections{
-    //     .show-case{
-    //         .products{
-    //             .product{
-    //                 .card{
-    //                     width: 200px;
-    //                 }
-    //             }
-    //         }
-    //     }
-    // }
-    .screen-app{
-        .slider{
-            .carousel-inner{
-                .cover{
-                    right: 250px !important;
-                    height: 527px !important;
-                }
             }
         }
     }
@@ -983,38 +844,13 @@ html[dir = "ltr"]{
             }
         }
     }
-    // .sections{
-    //     .show-case{
-    //         .products{
-    //             .product{
-    //                 .card{
-    //                     width: 185px;
-    //                 }
-    //             }
-    //         }
-    //     }
-    // }
     .screen-app{
-        .slider{
-            .carousel-inner{
-                #wrapper{
-                    .slider-img{
-                        width: 120px;
-                        height: 240px;
-                    }
-                }
-                .cover{
-                    right: 278px !important;
-                    width: 462px !important;
-                    top: 11px !important;
-                    height: 423px !important;
-                }
-            }    
+        .screen-img{
+            bottom: 234px;
+            width: 270px;
+            height: 506px;
         }
-        .app{
-            margin-top: 250px;
-        }
-    }  
+    }
     .footer{
         .container{
             max-width: 800px;
@@ -1236,6 +1072,13 @@ html[dir = "ltr"]{
             }
         }
     }
+    .screen-app{
+        .screen-img{
+            bottom: 241px;
+            width: 190px;
+            height: 365px;
+        }
+    }
     .footer{
         .items{
             display: flex;
@@ -1333,47 +1176,10 @@ html[dir = "ltr"]{
         }
     }
     .screen-app{
-        .slider{
-            .carousel-inner{
-                #wrapper{
-                    .slider-img{
-                        width: 70px;
-                        height: 140px;
-                    }
-                    .slider-img + .slider-img{
-                        margin-right: 30px !important; 
-                    }
-                }
-                .cover{
-                    right: 153px !important;
-                    width: 269px !important;
-                    top: 27px !important;
-                    height: 247px !important;
-                }
-            }
-            .indecators{
-                li{
-                    width: 25px;
-                }
-                .main{
-                    width: 50px;
-                }
-            }
-        }  
-        .app{
-            padding: 50px 10px;
-            .title{
-                font-size: 20px;
-            }
-            .buttons{
-                .btn{
-                    width: 165px;
-                }
-                .android{
-                    margin-right: 10px;
-                    margin-left: 0;
-                }
-            }
+        .screen-img{
+            bottom: 187px;
+            width: 644px;
+            height: 1315px;
         }
     }
     .footer{
@@ -1500,48 +1306,6 @@ html[dir = "ltr"]{
                 }
                 .text{
                     font-size: 11pt;
-                }
-            }
-        }
-    }
-    .screen-app{
-        .slider{
-            .carousel-inner{
-                #wrapper{
-                    .slider-img{
-                        width: 40px;
-                        height: 100px;
-                    }
-                }
-                .cover{
-                    right: 96px !important;
-                    width: 150px !important;
-                    top: 34px !important;
-                    height: 175px !important;
-                }
-            }    
-            .indecators{
-                li{
-                    width: 20px;
-                }
-                .main{
-                    width: 40px;
-                }
-            }
-        }
-        .app{
-            flex-direction: column;
-            padding: 20px 10px;
-            margin-top: 160px;
-            .title{
-                margin-bottom: 20px;
-            }
-            .buttons{
-                .btn{
-                    width: 160px;
-                    span{
-                        font-size: 14pt;
-                    }
                 }
             }
         }
@@ -1685,48 +1449,10 @@ html[dir = "ltr"]{
         }
     }
     .screen-app{
-        .slider{
-            .carousel-inner{
-                #wrapper{
-                    .slider-img{
-                        width: 40px;
-                        height: 100px;
-                    }
-                    .slider-img + .slider-img{
-                        margin-right: 12px !important;
-                    }
-                }
-                .cover{
-                    right: 56px !important;
-                    width: 150px !important;
-                    top: 34px !important;
-                    height: 175px !important;
-                }
-            }    
-            .indecators{
-                li{
-                    width: 20px;
-                }
-                .main{
-                    width: 40px;
-                }
-            }
-        }
-        .app{
-            flex-direction: column;
-            padding: 20px 10px;
-            margin-top: 160px;
-            .title{
-                margin-bottom: 20px;
-            }
-            .buttons{
-                .btn{
-                    width: 120px;
-                    span{
-                        font-size: 9pt;
-                    }
-                }
-            }
+        .screen-img{
+            bottom: 229px;
+            width: 318px;
+            height: 611px;
         }
     }
     .footer{
@@ -1766,8 +1492,6 @@ html[dir = "ltr"]{
                 }
             }
             .overlay{
-                padding-right: 0;
-                padding-left: 110px;
                 .caption{
                     .text{
                         padding-right: 55px;
@@ -1781,15 +1505,6 @@ html[dir = "ltr"]{
                         -moz-transform: matrix(3, 0, 0, 1, -38, -270);
                         -ms-transform: matrix(3, 0, 0, 1, -38, -270);
                         -o-transform: matrix(3, 0, 0, 1, -38, -270);
-                    }
-                }
-            }
-        }
-        .screen-app{
-            .slider{
-                .carousel-inner{
-                    .cover{
-                        left: 262px;
                     }
                 }
             }
@@ -1824,16 +1539,6 @@ html[dir = "ltr"]{
                 }
             }
         }
-        .screen-app{
-            .slider{
-                .carousel-inner{
-                    .cover{
-                        left: 203px;
-                        right: initial;
-                    }
-                }
-            }
-        }
     }    
 }
 @media (max-width: 1199.98px){
@@ -1864,15 +1569,6 @@ html[dir = "ltr"]{
                         -moz-transform: matrix(3, 0, 0, 1, 17, -232);
                         -ms-transform: matrix(3, 0, 0, 1, 17, -232);
                         -o-transform: matrix(3, 0, 0, 1, 17, -232);
-                    }
-                }
-            }
-        }
-        .screen-app{
-            .slider{
-                .carousel-inner{
-                    .cover{
-                        left: 256px;
                     }
                 }
             }
@@ -1922,22 +1618,6 @@ html[dir = "ltr"]{
             .show-case{
                 padding-right: 110px;
                 padding-left: 50px;
-            }
-        }
-        .screen-app{
-            .slider{
-                .carousel-inner{
-                    #wrapper{
-                        .slider-img + .slider-img{
-                            margin-left: 60px !important;
-                            margin-right: 0;
-                        }
-                    }
-                    .cover{
-                        right: initial !important;
-                        left: 168px !important;
-                    }
-                }
             }
         }
     }
@@ -2008,19 +1688,6 @@ html[dir = "ltr"]{
                 }
             }
         }
-        .screen-app{
-            .slider{
-                .carousel-inner{
-                    .cover{
-                        left: 211px !important;
-                        right: initial !important;
-                        width: 462px !important;
-                        top: 11px !important;
-                        height: 423px !important;
-                    }
-                }
-            }
-        }  
     }
 }
 @media (max-width: 768px){
@@ -2085,25 +1752,6 @@ html[dir = "ltr"]{
                         right: 130px;
                     }
                 }
-            }
-        }
-        .screen-app{
-            .slider{
-                .carousel-inner{
-                    #wrapper{
-                        .slider-img + .slider-img{
-                            margin-right: 0;
-                            margin-left: 50px;
-                        }
-                    }
-                    .cover{
-                        right: initial !important;
-                        left: 145px !important;
-                        width: 384px !important;
-                        top: 19px !important;
-                        height: 350px !important;
-                    }
-                }    
             }
         }
     }
@@ -2220,37 +1868,6 @@ html[dir = "ltr"]{
                 }
             }
         }
-        .screen-app{
-            .slider{
-                .carousel-inner{
-                    #wrapper{
-                        .slider-img{
-                            width: 70px !important;
-                            height: 140px !important;
-                        }
-                        .slider-img + .slider-img{
-                            margin-left: 30px !important; 
-                            margin-right: 0 !important;
-                        }
-                    }
-                    .cover{
-                        left: 113.5px !important;
-                        right: initial !important;
-                        width: 269px !important;
-                        top: 27px !important;
-                        height: 247px !important;
-                    }
-                }
-            }  
-            .app{
-                .buttons{
-                    .android{
-                        margin-right: 0;
-                        margin-left: 10px;
-                    }
-                }
-            }
-        }
         .footer{
             .logo{
                 width: 120px;
@@ -2331,46 +1948,6 @@ html[dir = "ltr"]{
                 }
             }
         }
-        // .sections{
-        //     .show-case{
-        //         .custom-products{
-        //             flex-direction: column;
-        //         }
-        //     }
-        // }
-        .screen-app{
-            .slider{
-                .carousel-inner{
-                    #wrapper{
-                        .slider-img{
-                            width: 40px !important;
-                            height: 100px !important;
-                        }
-                    }
-                    .cover{
-                        left: 74px !important;
-                        right: initial !important;
-                        width: 150px !important;
-                        top: 34px !important;
-                        height: 175px !important;
-                    }
-                }    
-            }
-            .app{
-                .buttons{
-                    .btn{
-                        width: 160px;
-                        span{
-                            font-size: 14pt;
-                        }
-                    }
-                    .android{
-                        margin-right: 0;
-                        margin-left: 10px;
-                    }
-                }
-            }
-        }
     }
 }
 @media (min-width: 280px) and (max-width: 350.98px){
@@ -2439,53 +2016,6 @@ html[dir = "ltr"]{
                 }
             }
         }
-        .screen-app{
-            .slider{
-                .carousel-inner{
-                    #wrapper{
-                        .slider-img{
-                            width: 40px !important;
-                            height: 100px !important;
-                        }
-                        .slider-img + .slider-img{
-                            margin-right: 0 !important;
-                            margin-left: 12px !important;
-                        }
-                    }
-                    .cover{
-                        right: initial !important;
-                        left: 34px !important;
-                        width: 150px !important;
-                        top: 34px !important;
-                        height: 175px !important;
-                    }
-                }    
-                .indecators{
-                    li{
-                        width: 20px;
-                    }
-                    .main{
-                        width: 40px;
-                    }
-                }
-            }
-            .app{
-                .buttons{
-                    .btn{
-                        width: 120px;
-                        padding-block: 3px;
-                        padding-inline: 2px;
-                        line-height: 20px;
-                        img{
-                            width: 14px;
-                        }
-                        span{
-                            font-size: 9pt;
-                        }
-                    }
-                }
-            }
-        }
     }
 }
 
@@ -2507,15 +2037,6 @@ html[dir = "ltr"]{
             }
         }
     }
-    .screen-app{
-        .slider{
-            .carousel-inner{
-                .cover{
-                    right: 268px !important;
-                }
-            }
-        }
-    } 
 }
 @media (min-width: 912px) and (max-width: 913px){
     .header{
@@ -2529,15 +2050,6 @@ html[dir = "ltr"]{
             .mob{
                 img{
                     width: 70%;
-                }
-            }
-        }
-    }
-    .screen-app{
-        .slider{
-            .carousel-inner{
-                .cover{
-                    right: 239px !important;
                 }
             }
         }
@@ -2583,61 +2095,28 @@ html[dir = "ltr"]{
             }
         }
     }
+}
+@media (min-width: 540px) and (max-width: 541px){
     .screen-app{
-        .slider{
-            .carousel-inner{
-                #wrapper{
-                    .slider-img  + .slider-img{
-                        margin-right: 50px;
-                    }
-                }
-                .cover{
-                    right: 192px !important;
-                }
-            }
-        }
-        .app{
-            .buttons{
-                .btn{
-                    width: 170px;
-                }
-                .android{
-                    margin-right: 10px;
-                }
-            }
+        .screen-img{
+            bottom: 191px;
+            width: 644px;
+            height: 1235px;
         }
     }
 }
-@media (min-width: 540px) and (max-width: 540px){
+@media (min-width: 412px) and (max-width: 415px){
     .screen-app{
-        .slider{
-            .carousel-inner{
-                .cover{
-                    right: 135px !important;
-                }
-            }
-        }
-        .app{
-            .buttons{
-                .btn{
-                    width: 155px;
-                }
-            }
+        .screen-img{
+            bottom: 209px;
+            width: 472px;
+            height: 932px;
         }
     }
 }
 @media (min-width: 412px) and (max-width: 413px){
     .features{
         height: 263px;
-    }
-    .screen-app{
-        .slider{
-            .carousel-inner{
-                .cover{
-                    right: 122px !important;
-                }
-            }
-        }
     }
 }
 @media (min-width: 414px) and (max-width: 415px){
@@ -2654,17 +2133,15 @@ html[dir = "ltr"]{
         }
     }
 }
-@media (min-width: 393px) and (max-width: 394px){
+@media (min-width: 390px) and (max-width: 394px){
     .features{
         height: 263px ;
     }
     .screen-app{
-        .slider{
-            .carousel-inner{
-                .cover{
-                    right: 113px !important;
-                }
-            }
+        .screen-img{
+            bottom: 209px;
+            width: 464px;
+            height: 887px;
         }
     }
 }
@@ -2672,27 +2149,25 @@ html[dir = "ltr"]{
     .features{
         height: 264px;
     }
-    .screen-app{
-        .slider{
-            .carousel-inner{
-                .cover{
-                    right: 111px !important;
-                }
-            }
-        }
-    }
 }
 @media (min-width: 375px) and (max-width: 376px){
     .features{
         height: 262px;
     }
     .screen-app{
-        .slider{
-            .carousel-inner{
-                .cover{
-                    right: 103px !important;
-                }
-            }
+        .screen-img{
+            bottom: 215px;
+            width: 418px;
+            height: 839px;
+        }
+    }
+}
+@media (min-width: 360px) and (max-width: 361px){
+    .screen-app{
+        .screen-img{
+            bottom: 220px;
+            width: 416px;
+            height: 801px;
         }
     }
 }
@@ -2706,16 +2181,6 @@ html[dir = "ltr"]{
                 padding-right: 0;
             }
         }
-        .screen-app{
-            .slider{
-                .carousel-inner{
-                    .cover{
-                        right: initial !important;
-                        left: 202px !important;
-                    }
-                }
-            }
-        } 
     }
 }
 @media (min-width: 912px) and (max-width: 913px){
@@ -2731,16 +2196,6 @@ html[dir = "ltr"]{
                 .mob{
                     img{
                         width: 70%;
-                    }
-                }
-            }
-        }
-        .screen-app{
-            .slider{
-                .carousel-inner{
-                    .cover{
-                        right: initial !important;
-                        left: 171px !important;
                     }
                 }
             }
@@ -2776,71 +2231,13 @@ html[dir = "ltr"]{
                 }
             }
         }
-        .screen-app{
-            .slider{
-                .carousel-inner{
-                    #wrapper{
-                        .slider-img  + .slider-img{
-                            margin-right: 0;
-                            margin-left: 50px;
-                        }
-                    }
-                    .cover{
-                        right: 0 !important;
-                        left: 126px !important;
-                    }
-                }
-            }
-            .app{
-                .buttons{
-                    .btn{
-                        width: 170px;
-                    }
-                    .android{
-                        margin-left: 10px;
-                        margin-right: 0;
-                    }
-                }
-            }
-        }
     }    
 }
 
-@media (min-width: 540px) and (max-width: 540px){
-    html[dir = "ltr"]{
-        .screen-app{
-            .slider{
-                .carousel-inner{
-                    .cover{
-                        right: initial !important;
-                        left: 96px !important;
-                    }
-                }
-            }
-            .app{
-                .buttons{
-                    .btn{
-                        width: 155px;
-                    }
-                }
-            }
-        }
-    }    
-}
 @media (min-width: 412px) and (max-width: 413px){
     html[dir = "ltr"]{
         .features{
             height: 263px;
-        }
-        .screen-app{
-            .slider{
-                .carousel-inner{
-                    .cover{
-                        right: initial !important;
-                        left: 100px !important;
-                    }
-                }
-            }
         }
     }    
 }
@@ -2848,16 +2245,6 @@ html[dir = "ltr"]{
     html[dir = "ltr"]{
         .features{
             height: 263px;
-        }
-        .screen-app{
-            .slider{
-                .carousel-inner{
-                    .cover{
-                        right: initial !important;
-                        left: 101px !important;
-                    }
-                }
-            }
         }
     }    
 }
@@ -2867,31 +2254,6 @@ html[dir = "ltr"]{
         .features{
             height: 254px;
         }
-        .screen-app{
-            .slider{
-                .carousel-inner{
-                    .cover{
-                        right: initial !important;
-                        left: 90px !important;
-                    }
-                }
-            }
-        }
-    }    
-}
-
-@media (min-width: 390px) and (max-width: 391px){
-    html[dir = "ltr"]{
-        .screen-app{
-            .slider{
-                .carousel-inner{
-                    .cover{
-                        right: initial !important;
-                        left: 89px !important;
-                    }
-                }
-            }
-        }
     }    
 }
 
@@ -2900,16 +2262,6 @@ html[dir = "ltr"]{
         .features{
             height: 253px;
         }
-        .screen-app{
-                .slider{
-                    .carousel-inner{
-                        .cover{
-                            left: 82px !important;
-                            right: initial !important;
-                        }
-                    }
-                }
-        }    
     }
 }
 
