@@ -281,7 +281,7 @@ html , body{
 .screen-app{
     position: relative;
     padding: 100px 0px 150px 0px;
-    background: #FFFFFF;
+    background: $bg-app;
     .screen-img{
         position: absolute;
         left: 50%;
@@ -334,6 +334,24 @@ html , body{
             }
         }
     } 
+}
+.app{
+    padding: 50px 100px;
+    background: $white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .title{
+        color: $min-color;
+        font-size: 18pt;
+        font-weight: bold;
+    }
+    @extend %buttons ; 
+    .buttons{
+        .android{
+            margin-right: 30px;
+        }
+    }
 }
 .footer{
     background-color: $black-color;
@@ -476,6 +494,14 @@ html[dir = "ltr"]{
                     margin-right: 0;
                     margin-left: 20px;
                 }
+            }
+        }
+    }
+    .app{
+        .buttons{
+            .android{
+                margin-right: 0;
+                margin-left: 30px;
             }
         }
     }
@@ -926,7 +952,7 @@ html[dir = "ltr"]{
     .about-us{
         padding-top: 250px;
         .offset-2{
-          margin-right: 6.666667% ; 
+            margin-right: 6.666667% ; 
         }
         .show-case{
             .image{
@@ -954,18 +980,6 @@ html[dir = "ltr"]{
             }
         }
     }
-    // .sections{
-    //     .show-case{
-    //         .products{
-    //             grid-template: auto / repeat(2 , 1fr);
-    //             .product{
-    //                 .card{
-    //                     width: 300px;
-    //                 }
-    //             }
-    //         }
-    //     }
-    // }
     .screen-app{
         .slider{
             .carousel-inner{
@@ -986,19 +1000,9 @@ html[dir = "ltr"]{
                 }
             }    
         }
-        // .slider{
-        //     padding-inline : 15px;
-        //     display: flex;
-        //     justify-content: center;
-        //     #wrapper{
-        //         .slider-img + .slider-img{
-        //             margin-right: 30px;
-        //         }
-        //     }
-        // }
-        .app{
-            padding: 50px 25px;
-        }
+    }
+    .app{
+        padding: 50px 25px;
     }
 }
 @media (max-width: 767.98px){
@@ -1182,6 +1186,21 @@ html[dir = "ltr"]{
             height: 1315px;
         }
     }
+    .app{
+        padding: 50px 10px;
+        .title{
+            font-size: 20px;
+        }
+        .buttons{
+            .btn{
+                width: 165px;
+            }
+            .android{
+                margin-right: 10px;
+                margin-left: 0;
+            }
+        }
+    }
     .footer{
         .logo{
             width: 85px;
@@ -1306,6 +1325,21 @@ html[dir = "ltr"]{
                 }
                 .text{
                     font-size: 11pt;
+                }
+            }
+        }
+    }
+    .app{
+        flex-direction: column;
+        padding: 20px 10px;
+        .title{
+            margin-bottom: 20px;
+        }
+        .buttons{
+            .btn{
+                width: 160px;
+                span{
+                    font-size: 14pt;
                 }
             }
         }
@@ -1453,6 +1487,21 @@ html[dir = "ltr"]{
             bottom: 229px;
             width: 318px;
             height: 611px;
+        }
+    }
+    .app{
+        flex-direction: column;
+        padding: 20px 10px;
+        .title{
+            margin-bottom: 20px;
+        }
+        .buttons{
+            .btn{
+                width: 120px;
+                span{
+                    font-size: 9pt;
+                }
+            }
         }
     }
     .footer{
@@ -1868,6 +1917,14 @@ html[dir = "ltr"]{
                 }
             }
         }
+        .app{
+            .buttons{
+                .android{
+                    margin-right: 0;
+                    margin-left: 10px;
+                }
+            }
+        }
         .footer{
             .logo{
                 width: 120px;
@@ -1948,6 +2005,20 @@ html[dir = "ltr"]{
                 }
             }
         }
+        .app{
+            .buttons{
+                .btn{
+                    width: 160px;
+                    span{
+                        font-size: 14pt;
+                    }
+                }
+                .android{
+                    margin-right: 0;
+                    margin-left: 10px;
+                }
+            }
+        }
     }
 }
 @media (min-width: 280px) and (max-width: 350.98px){
@@ -2012,6 +2083,22 @@ html[dir = "ltr"]{
                 .feature{
                     .content{
                         margin-right: 12px;
+                    }
+                }
+            }
+        }
+        .app{
+            .buttons{
+                .btn{
+                    width: 120px;
+                    padding-block: 3px;
+                    padding-inline: 2px;
+                    line-height: 20px;
+                    img{
+                        width: 14px;
+                    }
+                    span{
+                        font-size: 9pt;
                     }
                 }
             }
@@ -2095,6 +2182,16 @@ html[dir = "ltr"]{
             }
         }
     }
+    .app{
+        .buttons{
+            .btn{
+                width: 170px;
+            }
+            .android{
+                margin-right: 10px;
+            }
+        }
+    }
 }
 @media (min-width: 540px) and (max-width: 541px){
     .screen-app{
@@ -2102,6 +2199,13 @@ html[dir = "ltr"]{
             bottom: 191px;
             width: 644px;
             height: 1235px;
+        }
+    }
+    .app{
+        .buttons{
+            .btn{
+                width: 155px;
+            }
         }
     }
 }
@@ -2231,7 +2335,30 @@ html[dir = "ltr"]{
                 }
             }
         }
+        .app{
+            .buttons{
+                .btn{
+                    width: 170px;
+                }
+                .android{
+                    margin-left: 10px;
+                    margin-right: 0;
+                }
+            }
+        }
     }    
+}
+
+@media (min-width: 540px) and (max-width: 541px){
+    html[dir = "ltr"]{
+        .app{
+            .buttons{
+                .btn{
+                    width: 155px;
+                }
+            }
+        }
+    }
 }
 
 @media (min-width: 412px) and (max-width: 413px){

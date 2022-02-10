@@ -51,7 +51,7 @@ body ul {
   background-color: #a943a4 !important;
 }
 
-.header .overlay .caption .buttons .btn {
+.header .overlay .caption .buttons .btn, .app .buttons .btn {
   -webkit-box-shadow: none;
           box-shadow: none;
   border: none;
@@ -73,18 +73,18 @@ body ul {
   -o-transition: all 300ms ease;
 }
 
-.header .overlay .caption .buttons .btn img {
+.header .overlay .caption .buttons .btn img, .app .buttons .btn img {
   width: 20px;
   margin-right: 5px;
   margin-top: 0;
 }
 
-.header .overlay .caption .buttons .btn:hover {
+.header .overlay .caption .buttons .btn:hover, .app .buttons .btn:hover {
   filter: brightness(90%);
   -webkit-filter: brightness(90%);
 }
 
-.header .overlay .caption .buttons .android {
+.header .overlay .caption .buttons .android, .app .buttons .android {
   padding-block: 6.5px;
   margin-right: 50px;
 }
@@ -453,7 +453,7 @@ html, body {
 .screen-app {
   position: relative;
   padding: 100px 0px 150px 0px;
-  background: #FFFFFF;
+  background: #f6f5fa;
 }
 
 .screen-app .screen-img {
@@ -514,6 +514,30 @@ html, body {
 .screen-app .owl-carousel .center img {
   -webkit-transform: scale(1);
           transform: scale(1);
+}
+
+.app {
+  padding: 50px 100px;
+  background: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.app .title {
+  color: #a943a4;
+  font-size: 18pt;
+  font-weight: bold;
+}
+
+.app .buttons .android {
+  margin-right: 30px;
 }
 
 .footer {
@@ -657,6 +681,11 @@ html[dir="ltr"] .about-us .show-case .image img {
 html[dir="ltr"] .features .overlay .feature .content {
   margin-right: 0;
   margin-left: 20px;
+}
+
+html[dir="ltr"] .app .buttons .android {
+  margin-right: 0;
+  margin-left: 30px;
 }
 
 html[dir="ltr"] .footer .items .item img {
@@ -1067,7 +1096,7 @@ html[dir="ltr"] .footer .items .item img {
     top: 19px !important;
     height: 350px !important;
   }
-  .screen-app .app {
+  .app {
     padding: 50px 25px;
   }
 }
@@ -1223,6 +1252,19 @@ html[dir="ltr"] .footer .items .item img {
     width: 644px;
     height: 1315px;
   }
+  .app {
+    padding: 50px 10px;
+  }
+  .app .title {
+    font-size: 20px;
+  }
+  .app .buttons .btn {
+    width: 165px;
+  }
+  .app .buttons .android {
+    margin-right: 10px;
+    margin-left: 0;
+  }
   .footer .logo {
     width: 85px;
   }
@@ -1333,6 +1375,22 @@ html[dir="ltr"] .footer .items .item img {
   }
   .sections .show-case .sub .text {
     font-size: 11pt;
+  }
+  .app {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 20px 10px;
+  }
+  .app .title {
+    margin-bottom: 20px;
+  }
+  .app .buttons .btn {
+    width: 160px;
+  }
+  .app .buttons .btn span {
+    font-size: 14pt;
   }
   .footer .items {
     -ms-flex-wrap: wrap;
@@ -1460,6 +1518,22 @@ html[dir="ltr"] .footer .items .item img {
     bottom: 229px;
     width: 318px;
     height: 611px;
+  }
+  .app {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 20px 10px;
+  }
+  .app .title {
+    margin-bottom: 20px;
+  }
+  .app .buttons .btn {
+    width: 120px;
+  }
+  .app .buttons .btn span {
+    font-size: 9pt;
   }
   .footer .items {
     -ms-flex-wrap: wrap;
@@ -1762,6 +1836,10 @@ html[dir="ltr"] .footer .items .item img {
     margin-left: 7px;
     margin-right: 0;
   }
+  html[dir="ltr"] .app .buttons .android {
+    margin-right: 0;
+    margin-left: 10px;
+  }
   html[dir="ltr"] .footer .logo {
     width: 120px;
   }
@@ -1818,6 +1896,16 @@ html[dir="ltr"] .footer .items .item img {
   html[dir="ltr"] .features .overlay .feature .content .title {
     font-size: 9pt;
   }
+  html[dir="ltr"] .app .buttons .btn {
+    width: 160px;
+  }
+  html[dir="ltr"] .app .buttons .btn span {
+    font-size: 14pt;
+  }
+  html[dir="ltr"] .app .buttons .android {
+    margin-right: 0;
+    margin-left: 10px;
+  }
 }
 
 @media (min-width: 280px) and (max-width: 350.98px) {
@@ -1866,6 +1954,18 @@ html[dir="ltr"] .footer .items .item img {
   }
   html[dir="ltr"] .features .overlay .feature .content {
     margin-right: 12px;
+  }
+  html[dir="ltr"] .app .buttons .btn {
+    width: 120px;
+    padding-block: 3px;
+    padding-inline: 2px;
+    line-height: 20px;
+  }
+  html[dir="ltr"] .app .buttons .btn img {
+    width: 14px;
+  }
+  html[dir="ltr"] .app .buttons .btn span {
+    font-size: 9pt;
   }
 }
 
@@ -1920,6 +2020,12 @@ html[dir="ltr"] .footer .items .item img {
     -ms-transform: matrix(1, 0, 0, 1, 64, -170);
     -o-transform: matrix(1, 0, 0, 1, 64, -170);
   }
+  .app .buttons .btn {
+    width: 170px;
+  }
+  .app .buttons .android {
+    margin-right: 10px;
+  }
 }
 
 @media (min-width: 540px) and (max-width: 541px) {
@@ -1927,6 +2033,9 @@ html[dir="ltr"] .footer .items .item img {
     bottom: 191px;
     width: 644px;
     height: 1235px;
+  }
+  .app .buttons .btn {
+    width: 155px;
   }
 }
 
@@ -2023,6 +2132,19 @@ html[dir="ltr"] .footer .items .item img {
     -moz-transform: matrix(1, 0, 0, 1, -64, -170);
     -ms-transform: matrix(1, 0, 0, 1, -64, -170);
     -o-transform: matrix(1, 0, 0, 1, -64, -170);
+  }
+  html[dir="ltr"] .app .buttons .btn {
+    width: 170px;
+  }
+  html[dir="ltr"] .app .buttons .android {
+    margin-left: 10px;
+    margin-right: 0;
+  }
+}
+
+@media (min-width: 540px) and (max-width: 541px) {
+  html[dir="ltr"] .app .buttons .btn {
+    width: 155px;
   }
 }
 
